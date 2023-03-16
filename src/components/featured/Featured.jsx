@@ -1,9 +1,11 @@
 import "./featured.css";
-
+import { Link, Route, useNavigate } from "react-router-dom";
 const Featured = () => {
   return (
     <div className="featured">
-      <div className="featuredItem">
+    
+      <Link to={`/hotels`}>
+      <div  className="featuredItem">
         <img
           src="https://res.cloudinary.com/dmw2md0kg/image/upload/v1678781632/cau-vang-ba-na-hills_datduh.jpg"
           alt=""
@@ -14,6 +16,7 @@ const Featured = () => {
           <h2>Explore Now</h2>
         </div>
       </div>
+      </Link>
       
       <div className="featuredItem">
         <img
