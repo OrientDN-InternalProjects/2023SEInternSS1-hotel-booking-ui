@@ -27,10 +27,9 @@ const SearchItem = ({item}) => {
       <div className="siDetails">
          {item.rating && <div className="siRating">
           <span>Excellent</span>
-          <button>{item.Rating}</button>
+          <button>{item.rating}</button>
         </div>}
         <div className="siDetailTexts">
-          <span className="siPrice">$112</span>
           <span className="siTaxOp">Includes taxes and fees</span>
           <Link to={`/hotel/${item.id}`}>
           <button className="siCheckButton">See availability</button>

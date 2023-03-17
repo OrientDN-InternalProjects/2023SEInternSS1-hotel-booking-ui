@@ -104,6 +104,7 @@ const Hotel = () => {
             </div>
           </div>
         </div>
+        <br></br>
         <Flex gap={"10px"} wrap="wrap">
           {data?.rooms?.map(room => {
             return (

@@ -1,10 +1,16 @@
 import "./featured.css";
 import { Link, Route, useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Featured = () => {
+
+  // const [destination, setDestination] = useState("");
+  
+  // const navigate = useNavigate();
+  // const handleSearch = (value) => {
+  //   navigate("/hotels", { state: { value } });
+  // };
   return (
     <div className="featured">
-    
-      <Link to={`/hotels`}>
       <div  className="featuredItem">
         <img
           src="https://res.cloudinary.com/dmw2md0kg/image/upload/v1678781632/cau-vang-ba-na-hills_datduh.jpg"
@@ -13,10 +19,10 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Da Nang</h1>
-          <h2>Explore Now</h2>
+          Explore Now
         </div>
       </div>
-      </Link>
+ 
       
       <div className="featuredItem">
         <img
