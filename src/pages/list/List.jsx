@@ -18,7 +18,8 @@ const List = () => {
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   
-  const {data, loading, error, refetch} = useFetch(`https://localhost:7137/api/Hotel/fiters-hotel?city=Da Nang`)
+  const {data, loading, error, refetch} = useFetch(`https://localhost:7137/api/Hotel/fiters-hotel?from=${format(
+    date[0].startDate,"yyyy-MM-dd")}&to=${format(date[0].endDate, "yyyy-MM-dd")}&city=${destination}&roomType=${options}`)
   console.log(data);
   return (
     <div>

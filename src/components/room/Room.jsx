@@ -14,12 +14,12 @@ const Room = ({ room }) => {
   
     return (
       <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        <Image src={property.imageUrl} alt={property.imageAlt} />
+        <Image h={400} src={room.urls[0]} alt={property.imageAlt} />
   
         <Box p='6'>
           <Box display='flex' alignItems='baseline'>
             <Badge borderRadius='full' px='2' colorScheme='teal'>
-              New
+              {room.type}
             </Badge>
             <Box
               color='gray.500'
@@ -29,7 +29,12 @@ const Room = ({ room }) => {
               textTransform='uppercase'
               ml='2'
             >
-              {property.beds} beds &bull; {property.baths} baths
+            {room?.facilities?.map(f => {
+            return (
+                f.facilityName + "    " 
+            ) 
+          })}
+              
             </Box>
           </Box>
   
@@ -40,13 +45,17 @@ const Room = ({ room }) => {
             lineHeight='tight'
             noOfLines={1}
           >
-            {room.description}
+            {room?.extraServices?.map(f => {
+            return (
+                f.serviceName + "    " 
+            ) 
+          })}
           </Box>
   
           <Box>
-            {property.formattedPrice}
+            {room.price}
             <Box as='span' color='gray.600' fontSize='sm'>
-              / wk
+               VND
             </Box>
           </Box>
         </Box>

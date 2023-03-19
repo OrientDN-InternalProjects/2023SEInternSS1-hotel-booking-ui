@@ -75,10 +75,11 @@
 .headerSearchInput {
   border: none;
   outline: none;
+  color: black;
 }
 
 .headerSearchText {
-  color: lightgray;
+  color: black;
   cursor: pointer;
 }
 
@@ -100,6 +101,7 @@
 }
 
 .optionItem {
+  color: black;
   width: 200px;
   display: flex;
   justify-content: space-between;
