@@ -39,63 +39,63 @@ const Header = ({ type }) => {
 
 
   const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+    navigate(`/hotels/${destination}/${format(date[0].startDate,"yyyy-MM-dd")}/${format(date[0].endDate, "yyyy-MM-dd")}/${options}`, { state: { destination, date, options } });
   };
 
   return (
     <div className="header">
       <div
         className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
+          type === "list" ? "header-container list-mode" : "header-container"
         }
       >
-        <div className="headerList">
+        <div className="header-list">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem">
+          <div className="header-list-item">
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
           </div>
-          <div className="headerListItem">
+          <div className="header-list-item">
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
           </div>
-          <div className="headerListItem">
+          <div className="header-list-item">
             <FontAwesomeIcon icon={faBed} />
             <span>Attractions</span>
           </div>
-          <div className="headerListItem">
+          <div className="header-list-item">
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
           </div>
         </div>
         {type !== "list" && (
           <>
-            <h1 className="headerTitle">
+            <h1 className="header-title">
               A lifetime of discounts? It's Genius.
             </h1>
-            <p className="headerDesc">
+            <p className="desc">
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
-            <div className="headerSearch">
-              <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faBed} className="headerIcon" />
+            <button className="header-btn">Sign in / Register</button>
+            <div className="header-search">
+              <div className="header-search-item">
+                <FontAwesomeIcon icon={faBed} className="header-icon" />
                 <input
                   type="text"
                   placeholder="Where are you going?"
-                  className="headerSearchInput"
+                  className="header-search-input"
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
-              <div className="headerSearchItem">
+              <div className="header-search-item">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
                   onClick={() => setOpenDate(!openDate)}
-                  className="headerSearchText"
+                  className="header-search-text"
                 >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
                   date[0].endDate,
                   "MM/dd/yyyy"
@@ -111,22 +111,22 @@ const Header = ({ type }) => {
                   />
                 )}
               </div>
-              <div className="headerSearchItem">
+              <div className="header-search-item">
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 <Select color={"black"} defaultValue={options} onChange={handleRoomType}>
-                    <option name="single" value={0} className="optionItem">
+                    <option name="single" value={0} className="option-item">
                       Single
                     </option>
-                    <option name="double" value={1} className="optionItem">
+                    <option name="double" value={1} className="option-item">
                       Double
                     </option>
-                    <option name="triple" value={2} className="optionItem">
+                    <option name="triple" value={2} className="option-item">
                       Triple
                     </option>
                   </Select>
               </div>
-              <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+              <div className="header-search-item">
+                <button className="header-btn" onClick={handleSearch}>
                   Search
                 </button>
               </div>

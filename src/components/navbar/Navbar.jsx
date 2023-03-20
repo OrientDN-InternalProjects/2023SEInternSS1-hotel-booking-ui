@@ -3,11 +3,11 @@ import "./navbar.css"
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="navContainer">
+      <div className="nav-container">
         <span className="logo">OYO BOOKING</span>
         <div className="navItems">
-          <button className="navButton">Register</button>
-          <button className="navButton">Login</button>
+          <button className="nav-button">Register</button>
+          <button className="nav-button">Login</button>
         </div>
       </div>
     </div>

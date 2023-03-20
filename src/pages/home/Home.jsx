@@ -1,13 +1,9 @@
-import axios, { Axios } from "axios";
-import { useEffect, useState } from "react";
-import { filterHotel } from "../../apis/filter.api";
-import Featured from "../../components/featured/Featured";
-import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import PopularHotel from "../../components/Hotel/PopularHotel";
 import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
-import PropertyList from "../../components/propertyList/PropertyList";
+import PopularCity from "../../components/PopularCity/PopularCity";
 import "./home.css";
 
 const Home = () => {
@@ -43,9 +39,9 @@ const Home = () => {
       <Header/>
       <div className="homeContainer">
       <h1 className="homeTitle">Popular cities</h1>
-        <Featured/>
+        <PopularCity />
         <h1 className="homeTitle">Best favorite hotels</h1>
-        <FeaturedProperties/>
+        <PopularHotel/>
         <MailList/>
         <Footer/>
       </div>
