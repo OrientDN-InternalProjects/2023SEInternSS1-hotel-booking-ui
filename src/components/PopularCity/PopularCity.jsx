@@ -1,5 +1,5 @@
-import "./featured.css";
-const Featured = () => {
+import "./popular-city.css";
+const PopularCity = () => {
 
   // const [destination, setDestination] = useState("");
   
@@ -8,38 +8,38 @@ const Featured = () => {
   //   navigate("/hotels", { state: { value } });
   // };
   return (
-    <div className="featured">
-      <div  className="featuredItem">
+    <div className="cities">
+      <div  className="city-item">
         <img
           src="https://res.cloudinary.com/dmw2md0kg/image/upload/v1678781632/cau-vang-ba-na-hills_datduh.jpg"
           alt=""
-          className="featuredImg"
+          className="city-img"
         />
-        <div className="featuredTitles">
+        <div className="city-titles">
           <h1>Da Nang</h1>
-          Explore Now
+          <h2>Explore Now</h2>
         </div>
       </div>
  
       
-      <div className="featuredItem">
+      <div className="city-item">
         <img
           src="https://res.cloudinary.com/dmw2md0kg/image/upload/v1678781632/sunset-on-saigon-river_qxopmo.jpg"
           alt=""
-          className="featuredImg"
+          className="city-img"
         />
-        <div className="featuredTitles">
+        <div className="city-titles">
           <h1>Ho Chi Minh</h1>
           <h2>Explore Now</h2>
         </div>
       </div>
-      <div className="featuredItem">
+      <div className="city-item">
         <img
           src="https://res.cloudinary.com/dmw2md0kg/image/upload/v1678781632/Thap_Rua_viqfcb.jpg"
           alt=""
-          className="featuredImg"
+          className="city-img"
         />
-        <div className="featuredTitles">
+        <div className="city-titles">
           <h1>Ha Noi</h1>
           <h2>Explore Now</h2>
         </div>
@@ -48,4 +48,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default PopularCity;
