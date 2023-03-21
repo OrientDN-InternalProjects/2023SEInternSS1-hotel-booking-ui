@@ -1,12 +1,24 @@
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
-import PopularHotel from "../../components/Hotel/PopularHotel";
-import MailList from "../../components/mailList/MailList";
-import Navbar from "../../components/navbar/Navbar";
+import { useEffect, useState } from "react";
+import BestFavoriteList from "../../components/BestFavoriteHotelList/BestFavoriteHotelList";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Loading from "../../components/Loading/Loading";
+import MailList from "../../components/MailList/MailList";
+import Navbar from "../../components/NavBar/Navbar";
 import PopularCity from "../../components/PopularCity/PopularCity";
+import { getHotels } from "../../services/hotel-service";
 import "./home.css";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(() =>{
+    setLoading(true);
+    getHotels().then((res) => setData(res.data.data));
+    setLoading(false);
+  },[]);
+
   // const [loading, setLoading] = useState(false);
 
   // const data = {
@@ -36,12 +48,13 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Header/>
+      <Header />
       <div className="homeContainer">
       <h1 className="homeTitle">Popular cities</h1>
         <PopularCity />
-        <h1 className="homeTitle">Best favorite hotels</h1>
-        <PopularHotel/>
+        {
+          loading ? <Loading /> : <BestFavoriteList headerContent="Best Favorite Hotels" hotelsData={data} />
+        }
         <MailList/>
         <Footer/>
       </div>

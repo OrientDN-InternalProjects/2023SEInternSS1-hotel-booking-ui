@@ -1,6 +1,6 @@
 .cities{
   width: 100%;
-  max-width: 1024px;
+  max-width: 1182px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -13,7 +13,7 @@
   color: white;
   border-radius: 10px;
   overflow: hidden;
-  height: 250px;
+  height: 300px;
   flex:1
 }
 
