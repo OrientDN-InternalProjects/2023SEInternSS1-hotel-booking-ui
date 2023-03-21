@@ -1,8 +1,8 @@
 import "./hotel.css";
-import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/NavBar/Navbar";
+import Header from "../../components/Header/Header";
+import MailList from "../../components/MailList/MailList";
+import Footer from "../../components/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Room from "../../components/room/Room";
+import Room from "../../components/Room/Room";
 import { Flex} from "@chakra-ui/react";
 import { getHotelDetails } from "../../services/hotel-service";
 
