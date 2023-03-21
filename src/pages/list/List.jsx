@@ -2,14 +2,12 @@ import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
-import { filterHotel } from "../../apis/filter.api";
-import useFetch from "../../hooks/useFetch";
-import { da } from "date-fns/locale";
+import { getHotelByFilter } from "../../services/hotel-service";
+
 
 const List = () => {
   const location = useLocation();
@@ -18,9 +16,24 @@ const List = () => {
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   
-  const {data, loading, error, refetch} = useFetch(`https://localhost:7137/api/Hotel/fiters-hotel?from=${format(
-    date[0].startDate,"yyyy-MM-dd")}&to=${format(date[0].endDate, "yyyy-MM-dd")}&city=${destination}&roomType=${options}`)
-  console.log(data);
+  // const {data, loading, error, refetch} = useFetch(`https://localhost:7137/api/Hotel/fiters-hotel?from=${format(
+  //   date[0].startDate,"yyyy-MM-dd")}&to=${format(date[0].endDate, "yyyy-MM-dd")}&city=${destination}&roomType=${options}`)
+  // console.log(data);
+
+  const [data, setData] = useState([]);
+  const [loading,setLoading] = useState(false);
+  
+    useEffect(() =>{
+    setLoading(true);
+    console.log(destination);
+    console.log(format(date[0].startDate,"yyyy-MM-dd"));
+    console.log(format(date[0].endDate, "yyyy-MM-dd"));
+    console.log(options);
+    getHotelByFilter(destination,format(date[0].startDate,"yyyy-MM-dd"),format(date[0].endDate, "yyyy-MM-dd"),options).then((res) => setData(res.data.data));
+    console.log(data);
+    setLoading(false);
+  },[]);
+
   return (
     <div>
       <Navbar />

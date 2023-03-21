@@ -1,4 +1,4 @@
-.fp {
+.hotels {
   width: 100%;
   max-width: 1024px;
   display: flex;
@@ -6,33 +6,29 @@
   gap: 20px;
 }
 
-.fpItem{
+.hotel-item{
   flex: 1;
   gap: 10px;
   display: flex;
   flex-direction: column;
 }
 
-.fpImg{
+.hotel-img{
   width: 90%;
   height: 250px;
   object-fit: cover;
 }
 
-.fpName{
+.hotel-name{
   color: #333;
   font-weight: bold;
 }
 
-.fpCity{
+.hotel-city{
   font-weight: 300;
 }
 
-.fpPrice{
-  font-weight: 500;
-}
-
-.fpRating>button{
+.hotel-rating>button{
   background-color: #003580;
   color: white;
   border: none;
@@ -41,6 +37,6 @@
   font-weight: bold;
 }
 
-.fpRating>span{
+.hotel-rating>span{
   font-size: 14px;
 }

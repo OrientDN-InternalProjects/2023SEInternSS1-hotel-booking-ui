@@ -10,11 +10,11 @@ import {
   faCircleXmark,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
 import Room from "../../components/room/Room";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex} from "@chakra-ui/react";
+import { getHotelDetails } from "../../services/hotel-service";
 
 const Hotel = () => {
   const location = useLocation();
@@ -23,7 +23,15 @@ const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const {data, loading, error, refetch} = useFetch(`https://localhost:7137/api/Hotel/get-hotel-by-id?id=${id}`)
+  const [data, setData] = useState([]);
+  const [loading,setLoading] = useState(false);
+  
+  useEffect(() =>{
+    setLoading(true);
+    getHotelDetails(id).then((res) => setData(res.data.data));
+    console.log(data);
+    setLoading(false);
+  },[]);
 
   const handleOpen = (i) => {
     setSlideNumber(i);

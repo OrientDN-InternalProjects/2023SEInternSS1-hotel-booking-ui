@@ -3,45 +3,45 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="fLists">
-        <ul className="fList">
-          <li className="fListItem">Countries</li>
-          <li className="fListItem">Regions</li>
-          <li className="fListItem">Cities</li>
-          <li className="fListItem">Districts</li>
-          <li className="fListItem">Airports</li>
-          <li className="fListItem">Hotels</li>
+      <div className="lists">
+        <ul className="list">
+          <li className="item">Countries</li>
+          <li className="item">Regions</li>
+          <li className="item">Cities</li>
+          <li className="item">Districts</li>
+          <li className="item">Airports</li>
+          <li className="item">Hotels</li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Homes </li>
-          <li className="fListItem">Apartments </li>
-          <li className="fListItem">Resorts </li>
-          <li className="fListItem">Villas</li>
-          <li className="fListItem">Hostels</li>
-          <li className="fListItem">Guest houses</li>
+        <ul className="list">
+          <li className="item">Homes </li>
+          <li className="item">Apartments </li>
+          <li className="item">Resorts </li>
+          <li className="item">Villas</li>
+          <li className="item">Hostels</li>
+          <li className="item">Guest houses</li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Unique places to stay </li>
-          <li className="fListItem">Reviews</li>
-          <li className="fListItem">Unpacked: Travel articles </li>
-          <li className="fListItem">Travel communities </li>
-          <li className="fListItem">Seasonal and holiday deals </li>
+        <ul className="list">
+          <li className="item">Unique places to stay </li>
+          <li className="item">Reviews</li>
+          <li className="item">Unpacked: Travel articles </li>
+          <li className="item">Travel communities </li>
+          <li className="item">Seasonal and holiday deals </li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Car rental </li>
-          <li className="fListItem">Flight Finder</li>
-          <li className="fListItem">Restaurant reservations </li>
-          <li className="fListItem">Travel Agents </li>
+        <ul className="list">
+          <li className="item">Car rental </li>
+          <li className="item">Flight Finder</li>
+          <li className="item">Restaurant reservations </li>
+          <li className="item">Travel Agents </li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
-          <li className="fListItem">Partner Help</li>
-          <li className="fListItem">Careers</li>
-          <li className="fListItem">Sustainability</li>
-          <li className="fListItem">Press center</li>
-          <li className="fListItem">Safety Resource Center</li>
-          <li className="fListItem">Investor relations</li>
-          <li className="fListItem">Terms & conditions</li>
+        <ul className="list">
+          <li className="item">Curtomer Service</li>
+          <li className="item">Partner Help</li>
+          <li className="item">Careers</li>
+          <li className="item">Sustainability</li>
+          <li className="item">Press center</li>
+          <li className="item">Safety Resource Center</li>
+          <li className="item">Investor relations</li>
+          <li className="item">Terms & conditions</li>
         </ul>
       </div>
       <div className="fText">Copyright © 2022 Lamabooking.</div>
