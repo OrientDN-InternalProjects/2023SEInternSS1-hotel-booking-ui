@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import BestFavoriteList from "../../components/BestFavoriteHotelList/BestFavoriteHotelList";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header/Header";
 import MailList from "../../components/MailList/MailList";
 import Navbar from "../../components/NavBar/Navbar";
