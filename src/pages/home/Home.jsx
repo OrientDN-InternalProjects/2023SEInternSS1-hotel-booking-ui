@@ -4,10 +4,10 @@ import PopularCity from "../../components/PopularCity/PopularCity";
 import { getHotels } from "../../services/hotel-service";
 import "./home.css";
 import { Spinner } from '@chakra-ui/react';
-import Navbar from "../../components/navBar/Navbar";
-import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
-import Navbar from "../../components/navBar/Navbar";
+import Header from "../../components/Header/Header";
+import MailList from "../../components/MailList/MailList";
+import Navbar from "../../components/NavBar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -62,7 +62,7 @@ const Home = () => {
           !loading ? <Spinner /> : <BestFavoriteList headerContent="Best Favorite Hotels" hotelsData={data} />
         }
         <MailList />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import "./list.css";
-import Navbar from "../../components/navBar/Navbar";
-import Header from "../../components/header/Header";
+import Navbar from "../../components/NavBar/Navbar";
+import Header from "../../components/Header/Header";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
-import SearchItem from "../../components/searchItem/SearchItem";
+import SearchItem from "../../components/SearchItem/SearchItem";
 import { getHotelByFilter } from "../../services/hotel-service";
 import { Spinner } from '@chakra-ui/react'
 
