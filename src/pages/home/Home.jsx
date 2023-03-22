@@ -9,7 +9,6 @@ import { getHotels } from "../../services/hotel-service";
 import "./home.css";
 import { Spinner } from '@chakra-ui/react';
 
-
 const Home = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
