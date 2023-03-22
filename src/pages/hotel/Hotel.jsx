@@ -1,8 +1,5 @@
 import "./hotel.css";
-import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -15,6 +12,9 @@ import { useLocation } from "react-router-dom";
 import Room from "../../components/room/Room";
 import { Flex} from "@chakra-ui/react";
 import { getHotelDetails } from "../../services/hotel-service";
+import MailList from "../../components/mailList/MailList";
+import Navbar from "../../components/navBar/Navbar";
+import Header from "../../components/header/Header";
 
 const Hotel = () => {
   const location = useLocation();
@@ -121,7 +121,6 @@ const Hotel = () => {
           })}
         </Flex>
         <MailList />
-        <Footer />
       </div>
       )}
     </div>

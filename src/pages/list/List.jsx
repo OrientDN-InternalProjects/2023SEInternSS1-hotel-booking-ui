@@ -1,5 +1,5 @@
 import "./list.css";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/navBar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import { getHotelByFilter } from "../../services/hotel-service";
+import { Spinner } from '@chakra-ui/react'
 
 
 const List = () => {
@@ -30,7 +31,6 @@ const List = () => {
     console.log(format(date[0].endDate, "yyyy-MM-dd"));
     console.log(options);
     getHotelByFilter(destination,format(date[0].startDate,"yyyy-MM-dd"),format(date[0].endDate, "yyyy-MM-dd"),options).then((res) => setData(res.data.data));
-    console.log(data);
     setLoading(false);
   },[]);
 
@@ -108,7 +108,11 @@ const List = () => {
           </div>
           <div className="listResult">
           {loading ? (
-              "loading"
+              <Spinner   thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='blue.500'
+              size='xl' />
             ) : (
               <>
                 {data.map((item) => (
