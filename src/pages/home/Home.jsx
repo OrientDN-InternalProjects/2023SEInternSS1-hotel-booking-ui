@@ -4,9 +4,9 @@ import PopularCity from "../../components/PopularCity/PopularCity";
 import { getHotels } from "../../services/hotel-service";
 import "./home.css";
 import { Spinner } from '@chakra-ui/react';
-import Header from "../../components/Header/Header";
 import MailList from "../../components/MailList/MailList";
 import Navbar from "../../components/NavBar/Navbar";
+import Header from "../../components/Header/Header";
 
 const Home = () => {
   const [data, setData] = useState([]);
