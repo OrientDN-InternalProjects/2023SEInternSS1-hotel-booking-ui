@@ -7,6 +7,7 @@ import { Spinner } from '@chakra-ui/react';
 import Navbar from "../../components/navBar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
+import Navbar from "../../components/navBar/Navbar";
 
 const Home = () => {
   const [data, setData] = useState([]);
