@@ -20,14 +20,14 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - name: Case Sensitivity Checker
+      uses: credfeto/action-case-checker@v1.3.0
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Case Sensitivity Checker
-    - uses: credfeto/action-case-checker@v1.3.0
 
     - run: npm install
     - run: npm ci
