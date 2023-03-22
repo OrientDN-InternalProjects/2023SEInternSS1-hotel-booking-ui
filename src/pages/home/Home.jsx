@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import BestFavoriteList from "../../components/BestFavoriteHotelList/BestFavoriteHotelList";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import Loading from "../../components/Loading/Loading";
 import MailList from "../../components/MailList/MailList";
 import Navbar from "../../components/NavBar/Navbar";
 import PopularCity from "../../components/PopularCity/PopularCity";

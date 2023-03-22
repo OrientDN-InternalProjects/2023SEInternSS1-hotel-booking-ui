@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="footer">
       <div className="lists">
         <ul className="list">
-          <li className="item">Countries</li>
+          <li className="item">Countries </li>
           <li className="item">Regions</li>
           <li className="item">Cities</li>
           <li className="item">Districts</li>
