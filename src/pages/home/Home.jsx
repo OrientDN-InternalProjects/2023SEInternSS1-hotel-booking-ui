@@ -62,7 +62,7 @@ const Home = () => {
           !loading ? <Spinner /> : <BestFavoriteList headerContent="Best Favorite Hotels" hotelsData={data} />
         }
         <MailList/>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
