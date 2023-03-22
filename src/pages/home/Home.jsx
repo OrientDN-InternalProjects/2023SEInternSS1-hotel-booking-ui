@@ -7,7 +7,7 @@ import PopularCity from "../../components/PopularCity/PopularCity";
 import { getHotels } from "../../services/hotel-service";
 import "./home.css";
 import { Spinner } from '@chakra-ui/react';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/footer/Footer';
 
 const Home = () => {
   const [data, setData] = useState([]);
