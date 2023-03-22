@@ -36,8 +36,6 @@ const Header = ({ type }) => {
 
   const navigate = useNavigate();
 
-
-
   const handleSearch = () => {
     navigate(`/hotels/${destination}/${format(date[0].startDate,"yyyy-MM-dd")}/${format(date[0].endDate, "yyyy-MM-dd")}/${options}`, { state: { destination, date, options } });
   };
