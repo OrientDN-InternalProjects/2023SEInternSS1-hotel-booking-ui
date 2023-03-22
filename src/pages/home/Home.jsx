@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import BestFavoriteList from "../../components/BestFavoriteHotelList/BestFavoriteHotelList";
-import MailList from "../../components/MailList/MailList";
-import Navbar from "../../components/NavBar/Navbar";
 import PopularCity from "../../components/PopularCity/PopularCity";
 import { getHotels } from "../../services/hotel-service";
 import "./home.css";
 import { Spinner } from '@chakra-ui/react';
 import Header from "../../components/Header/Header";
+import MailList from "../../components/MailList/MailList";
+import Navbar from "../../components/NavBar/Navbar";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -60,7 +60,7 @@ const Home = () => {
         {
           !loading ? <Spinner /> : <BestFavoriteList headerContent="Best Favorite Hotels" hotelsData={data} />
         }
-        <MailList/>
+        <MailList />
         {/* <Footer /> */}
       </div>
     </div>

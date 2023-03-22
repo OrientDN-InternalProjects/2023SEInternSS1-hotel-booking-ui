@@ -1,7 +1,5 @@
 import "./hotel.css";
-import Navbar from "../../components/NavBar/Navbar";
 import Header from "../../components/Header/Header";
-import MailList from "../../components/MailList/MailList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -14,6 +12,8 @@ import { useLocation } from "react-router-dom";
 import Room from "../../components/Room/Room";
 import { Flex} from "@chakra-ui/react";
 import { getHotelDetails } from "../../services/hotel-service";
+import MailList from "../../components/MailList/MailList";
+import Navbar from "../../components/NavBar/Navbar";
 
 const Hotel = () => {
   const location = useLocation();
