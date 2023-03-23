@@ -6,8 +6,8 @@ import "./home.css";
 import { Box, Container, Flex, Spinner } from '@chakra-ui/react';
 import Header from "../../components/Header/Header";
 import MailList from "../../components/MailList/MailList";
-import Navbar from "../../components/NavBar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
 
 const Home = () => {
   const [data, setData] = useState([]);

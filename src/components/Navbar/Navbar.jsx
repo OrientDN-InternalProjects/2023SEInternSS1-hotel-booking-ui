@@ -1,17 +1,23 @@
-import "./navbar.css"
-
+import "./navbar.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
+//   const { user } = useContext(AuthContext);
+
   return (
     <div className="navbar">
-      <div className="nav-container">
-        <span className="logo">OYO BOOKING</span>
-        <div className="navItems">
-          <button className="nav-button">Register</button>
-          <button className="nav-button">Login</button>
-        </div>
+      <div className="navContainer">
+        <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+          <span className="logo">lamabooking</span>
+        </Link>
+        {/* {user ? user.username : ( */}
+          <div className="navItems">
+            <button className="navButton">Register</button>
+            <button className="navButton">Login</button>
+          </div>
+        {/* )} */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -13,8 +13,8 @@ import Room from "../../components/Room/Room";
 import { Flex, Spinner} from "@chakra-ui/react";
 import { getHotelDetails } from "../../services/hotel-service";
 import MailList from "../../components/MailList/MailList";
-import Navbar from "../../components/NavBar/Navbar";
 import Header from "../../components/Header/Header";
+import Navbar from "../../components/navbar/Navbar";
 
 const Hotel = () => {
   const location = useLocation();

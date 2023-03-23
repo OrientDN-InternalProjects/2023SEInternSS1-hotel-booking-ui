@@ -1,13 +1,13 @@
 import "./list.css";
-import Navbar from "../../components/NavBar/Navbar";
 import Header from "../../components/Header/Header";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/SearchItem/SearchItem";
 import { getHotelByCity, getHotelByFilter } from "../../services/hotel-service";
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Radio, RadioGroup, Spinner, Stack} from '@chakra-ui/react'
+import Navbar from "../../components/navbar/Navbar";
 
 
 const List = () => {
