@@ -31,7 +31,7 @@ const BestFavoriteList = ({ headerContent, hotelsData }) => {
         >
           {headerContent}
         </Box>
-        <Link to="/books/books-list">
+        {/* <Link to="/books/books-list">
           <Button
             variant="link"
             color="#8D28AD"
@@ -42,7 +42,7 @@ const BestFavoriteList = ({ headerContent, hotelsData }) => {
             View more
             <ArrowRightIcon marginLeft="4px" />
           </Button>
-        </Link>
+        </Link> */}
       </Flex>
       <Slider {...settings}>
             {hotelsData.map((item) => {

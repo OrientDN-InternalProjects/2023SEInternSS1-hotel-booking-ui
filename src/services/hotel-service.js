@@ -15,8 +15,14 @@ const getHotelByFilter = async (city,from,to,type) =>
 {
     return await axios.get(`${BASE_URL}/Hotel/fiters-hotel?from=${from}&to=${to}&city=${city}&roomType=${type}`);
 }
+
+const getHotelByCity = async (city) => {
+    return await axios.get(`${BASE_URL}/Hotel/fiters-hotel?city=${city}`);
+}
+
 export  {
     getHotels,
     getHotelDetails,
     getHotelByFilter,
+    getHotelByCity
 }
