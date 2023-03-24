@@ -2,8 +2,6 @@ import React from "react";
 import { Box, Button, Container, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import CarouselNextArrow from "../../components/CarouselNextArrow/CarouselNextArrow";
-import CarouselPrevArrow from "../../components/CarouselPrevArrow/CarouselPrevArrow";
 import ArrowRightIcon from "../icons/cases/ArrowRightIcon";
 import FavoriteHotel from "./FavoriteHotel/FavoriteHotel";
 
@@ -31,7 +29,7 @@ const BestFavoriteList = ({ headerContent, hotelsData }) => {
         >
           {headerContent}
         </Box>
-        {/* <Link to="/books/books-list">
+        <Link to="/all">
           <Button
             variant="link"
             color="#8D28AD"
@@ -42,7 +40,7 @@ const BestFavoriteList = ({ headerContent, hotelsData }) => {
             View more
             <ArrowRightIcon marginLeft="4px" />
           </Button>
-        </Link> */}
+        </Link>
       </Flex>
       <Slider {...settings}>
             {hotelsData.map((item) => {

@@ -55,7 +55,7 @@ const List = () => {
       <Header type="list" />
       <div className="listContainer">
         <div className="listWrapper">
-          <div className="listSearch">
+        {!date ? "" : <div className="listSearch">
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>Destination</label>
@@ -91,6 +91,7 @@ const List = () => {
             </div>
             <button onClick={handleClick}>Search</button>
           </div>
+          }
           <div className="listResult">
           {
              !data? (
@@ -111,6 +112,7 @@ const List = () => {
             
           </div>
         </div>
+
       </div>
     </div>
   );

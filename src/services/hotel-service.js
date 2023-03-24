@@ -20,9 +20,14 @@ const getHotelByCity = async (city) => {
     return await axios.get(`${BASE_URL}/Hotel/fiters-hotel?city=${city}`);
 }
 
+const getHotelPaged = async(curPage, itemLimit) =>{
+    return await axios.get(`${BASE_URL}/Hotel/get-all-hotel-paged-list?PageNumber=${curPage}&PageSize=${itemLimit}`);
+}
+
 export  {
     getHotels,
     getHotelDetails,
     getHotelByFilter,
-    getHotelByCity
+    getHotelByCity,
+    getHotelPaged,
 }
