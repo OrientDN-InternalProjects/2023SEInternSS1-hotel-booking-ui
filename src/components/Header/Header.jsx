@@ -16,7 +16,8 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { Select } from "@chakra-ui/react";
 
-const Header = ({ type }) => {
+
+const Header = ({ type, check }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
@@ -90,9 +91,9 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            <button className="header-btn">Sign in / Register</button>
+            { check ? "": <button className="header-btn">Sign in / Register</button>}
             <div className="header-search">
-              <div className="header-search-item">
+              { check ? "": <div className="header-search-item">
                 <FontAwesomeIcon icon={faBed} className="header-icon" />
                 <input
                   type="text"
@@ -100,7 +101,7 @@ const Header = ({ type }) => {
                   className="header-search-input"
                   onChange={(e) => setDestination(e.target.value)}
                 />
-              </div>
+              </div>}
               <div className="header-search-item">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span

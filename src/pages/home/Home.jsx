@@ -7,7 +7,7 @@ import { Box, Container, Flex, Spinner } from '@chakra-ui/react';
 import Header from "../../components/Header/Header";
 import MailList from "../../components/MailList/MailList";
 import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header check={false} />
       <div className="homeContainer">
       <Container marginTop={8} maxW={"container.xl"}>
       <Flex

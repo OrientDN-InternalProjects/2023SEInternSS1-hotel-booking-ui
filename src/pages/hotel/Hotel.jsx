@@ -8,13 +8,13 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Room from "../../components/Room/Room";
 import { Flex, Spinner} from "@chakra-ui/react";
 import { getHotelDetails } from "../../services/hotel-service";
 import MailList from "../../components/MailList/MailList";
 import Header from "../../components/Header/Header";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Hotel = () => {
   const location = useLocation();
@@ -56,6 +56,11 @@ const Hotel = () => {
     setSlideNumber(newSlideNumber)
   };
 
+  const handleClick = () =>
+  {
+
+  }
+
   return (
     <div>
       <Navbar />
@@ -90,7 +95,10 @@ const Hotel = () => {
           </div>
         )}
         <div className="hotelWrapper">
+        <Link to={`/reserve/${id}`}>
           <button className="bookNow">Reserve or Book Now!</button>
+        </Link>
+        
           <h1 className="hotelTitle">{data.hotelName}</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />

@@ -7,7 +7,7 @@ import { DateRange } from "react-date-range";
 import SearchItem from "../../components/SearchItem/SearchItem";
 import { getHotelByCity, getHotelByFilter } from "../../services/hotel-service";
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Radio, RadioGroup, Spinner, Stack} from '@chakra-ui/react'
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 
 const List = () => {
