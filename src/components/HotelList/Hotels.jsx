@@ -1,17 +1,15 @@
-import React from 'react'
 import {VStack } from "@chakra-ui/react";
 import Hotel from './Hotel/Hotel';
 
-const Hotels = ({ books }) => {
+const Hotels = ({data }) => {
   return (
     <VStack align='flex-start' spacing={14} marginLeft={4}>
-        {books.map((item, key) => {
+        {data.map((item) => {
             return (
-                <Hotel key={item.id} {...item}/>
+                <Hotel key={item.id} hotelData = {item}/>
             )
         })}
     </VStack>
   )
 }
-
-export default Hotels
+export default Hotels;

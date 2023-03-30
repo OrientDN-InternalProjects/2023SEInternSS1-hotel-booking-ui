@@ -3,10 +3,11 @@ import BestFavoriteList from "../../components/BestFavoriteHotelList/BestFavorit
 import PopularCity from "../../components/PopularCity/PopularCity";
 import { getHotels } from "../../services/hotel-service";
 import "./home.css";
-import { Spinner } from '@chakra-ui/react';
-import Navbar from "../../components/Navbar/Navbar";
+import { Box, Container, Flex, Spinner } from '@chakra-ui/react';
 import Header from "../../components/Header/Header";
 import MailList from "../../components/MailList/MailList";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -24,44 +25,39 @@ const Home = () => {
     }, 2000)
   }, [])
 
-  // const [loading, setLoading] = useState(false);
-
-  // const data = {
-  //   "city": "DA NANG",
-  //   "duration": {
-  //     "from": "2023-03-04T08:15:56.412Z",
-  //     "to": "2023-03-05T08:15:56.412Z"
-  //   },
-  //   "roomType": 1
-  // };
-  // const reFetch = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const res = await axios.post('https://localhost:7137/api/Hotel/fiters-hotel', data)
-  //     console.log(res.data.data.hotel);
-  //   } 
-  //   catch (err) {
-  //     console.log(err);
-  //   } 
-  //   setLoading(false);
-  // };
-  // // reFetch();
-  // useEffect(() => {
-  //   reFetch();
-  // }, []);
-
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header check={false} />
       <div className="homeContainer">
-      <h1 className="homeTitle">Popular cities</h1>
+      <Container marginTop={8} maxW={"container.xl"}>
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        marginBottom="32px"
+      >
+      <Box
+          fontWeight="600"
+          fontSize="24px"
+          lineHeight="50px"
+          className="slider-header"
+          marginBottom="10px"
+        >
+          Popular cities
+        </Box>
+        </Flex>
+        </Container>
         <PopularCity />
         {
-          !loading ? <Spinner /> : <BestFavoriteList headerContent="Best Favorite Hotels" hotelsData={data} />
+          !loading ? 
+          <Flex h={"700px"} color={"blue.400"} justifyContent={"center"} alignItems={"center"}>
+          <Spinner  size={"lg"} />
+          </Flex> 
+          : <BestFavoriteList headerContent="Best Favorite Hotels" hotelsData={data} />
         }
+        
         <MailList />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

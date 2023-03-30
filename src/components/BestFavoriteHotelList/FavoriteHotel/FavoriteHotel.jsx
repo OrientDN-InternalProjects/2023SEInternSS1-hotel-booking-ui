@@ -12,7 +12,7 @@ import StarIcon from "../../icons/cases/StarIcon";
 
 const FavoriteHotel = ({ hotelData }) => {
   return (
-    <Link to={`/hotel/${hotelData.id}`}>
+    <Link to={`/hotel/details/${hotelData.id}`}>
       <Grid
         h="280px"
         w="380px"

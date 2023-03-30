@@ -16,7 +16,7 @@ const SearchItem = ({item}) => {
         <span className="siSubtitle">
           Studio Apartment with Air conditioning
         </span>
-        <span className="siFeatures">
+        <span className="siFeatures text">
           {item.description}
         </span>
         <span className="siCancelOp">Free cancellation </span>
@@ -31,7 +31,7 @@ const SearchItem = ({item}) => {
         </div>}
         <div className="siDetailTexts">
           <span className="siTaxOp">Includes taxes and fees</span>
-          <Link to={`/hotel/${item.id}`}>
+          <Link to={`/hotel/details/${item.id}`}>
           <button className="siCheckButton">See availability</button>
           </Link>
         </div>

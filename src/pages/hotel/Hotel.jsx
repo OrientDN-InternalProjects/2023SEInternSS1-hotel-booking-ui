@@ -8,9 +8,9 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Room from "../../components/Room/Room";
-import { Flex} from "@chakra-ui/react";
+import { Flex, Spinner} from "@chakra-ui/react";
 import { getHotelDetails } from "../../services/hotel-service";
 import MailList from "../../components/MailList/MailList";
 import Header from "../../components/Header/Header";
@@ -18,7 +18,7 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const Hotel = () => {
   const location = useLocation();
-  const id = location.pathname.split("/")[2];
+  const id = location.pathname.split("/")[3];
   console.log(id);
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
@@ -32,6 +32,12 @@ const Hotel = () => {
     console.log(data);
     setLoading(false);
   },[]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true)
+    }, 1000)
+  }, [])
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -50,12 +56,19 @@ const Hotel = () => {
     setSlideNumber(newSlideNumber)
   };
 
+  const handleClick = () =>
+  {
+
+  }
+
   return (
     <div>
       <Navbar />
       <Header type="list" />
-      {loading ? (
-        "loading"
+      {!loading ? (
+                  <Flex h={"700px"} color={"blue.400"} justifyContent={"center"} alignItems={"center"}>
+                  <Spinner  size={"lg"} />
+                  </Flex> 
       ) : 
       (
       <div className="hotelContainer">
@@ -82,7 +95,10 @@ const Hotel = () => {
           </div>
         )}
         <div className="hotelWrapper">
+        <Link to={`/reserve/${id}`}>
           <button className="bookNow">Reserve or Book Now!</button>
+        </Link>
+        
           <h1 className="hotelTitle">{data.hotelName}</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />

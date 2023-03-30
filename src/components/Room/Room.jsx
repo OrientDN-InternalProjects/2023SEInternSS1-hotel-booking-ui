@@ -53,7 +53,7 @@ const Room = ({ room }) => {
           </Box>
   
           <Box>
-            {room.price}
+            {room.price.toLocaleString("en-US", { minimumFractionDigits:0}) }
             <Box as='span' color='gray.600' fontSize='sm'>
                VND
             </Box>

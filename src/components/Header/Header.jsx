@@ -16,7 +16,8 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { Select } from "@chakra-ui/react";
 
-const Header = ({ type }) => {
+
+const Header = ({ type, check }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
@@ -28,6 +29,8 @@ const Header = ({ type }) => {
   ]);
   const [options, setOptions] = useState(0);
 
+
+
   const handleRoomType = (event) => {
     setOptions(event.target.value)
   }
@@ -36,9 +39,19 @@ const Header = ({ type }) => {
 
   const navigate = useNavigate();
 
-  const handleSearch = () => {
+  const handleSearch = (fromTime, toTime) => {
+    if (fromTime >= toTime) {
+      alert("please choose a valid duration");
+    }
+  else {
     navigate(`/hotels/${destination}/${format(date[0].startDate,"yyyy-MM-dd")}/${format(date[0].endDate, "yyyy-MM-dd")}/${options}`, { state: { destination, date, options } });
+    if (!destination)
+    {
+      navigate(`/hotels/${format(date[0].startDate,"yyyy-MM-dd")}/${format(date[0].endDate, "yyyy-MM-dd")}/${options}`, { state: { destination, date, options } });
+    }
+  }
   };
+
 
   return (
     <div className="header">
@@ -78,9 +91,9 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            <button className="header-btn">Sign in / Register</button>
+            { check ? "": <button className="header-btn">Sign in / Register</button>}
             <div className="header-search">
-              <div className="header-search-item">
+              { check ? "": <div className="header-search-item">
                 <FontAwesomeIcon icon={faBed} className="header-icon" />
                 <input
                   type="text"
@@ -88,7 +101,7 @@ const Header = ({ type }) => {
                   className="header-search-input"
                   onChange={(e) => setDestination(e.target.value)}
                 />
-              </div>
+              </div>}
               <div className="header-search-item">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
@@ -124,7 +137,10 @@ const Header = ({ type }) => {
                   </Select>
               </div>
               <div className="header-search-item">
-                <button className="header-btn" onClick={handleSearch}>
+                <button className="header-btn" onClick={handleSearch.bind(this, format(date[0].startDate, "MM/dd/yyyy"), format(
+                  date[0].endDate,
+                  "MM/dd/yyyy"
+                ))}>
                   Search
                 </button>
               </div>
